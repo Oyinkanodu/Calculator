@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calcstylesheet.css">
+</head>
+<body>
+    <div class="Calculator">
+    <input type="text" id ="ScreenInput" placeholder="0" id="num">
+    <div class="buttons">
+        <button onclick ="del()">DEL</button>
+        <button onclick ="AC()">AC</button>
+        <button onclick ="log()">log</button>
+        <button onclick ="pie()">π</button>
+        <button onclick ="seven()">7</button>
+        <button onclick ="eight()">8</button>
+        <button onclick="nine()">9</button>
+        <button onclick="div()">/</button>
+        <button onclick ="four()">4</button>
+        <button onclick ="five()">5</button>
+        <button onclick ="six()">6</button>
+        <button onclick="mult()">×</button>
+        <button onclick ="one()">1</button>
+        <button onclick ="two()">2</button>
+        <button onclick ="three()">3</button>
+        <button onclick="sub()">-</button>
+        <button onclick="zero()">0</button>
+        <button onclick="dot()">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="add()">+</button>
+</div>
+</div>
+    
+</body>
+<script>
+ function one() {
+    document.getElementById("ScreenInput").value += "1";
+ }
+ function two() {
+    document.getElementById("ScreenInput").value += "2";
+ }
+ function three() {
+    document.getElementById("ScreenInput").value += "3";
+ }
+ function four() {
+    document.getElementById("ScreenInput").value += "4";
+ }
+ function five() {
+    document.getElementById("ScreenInput").value += "5";
+ }
+ function six() {
+    document.getElementById("ScreenInput").value += "6";
+ }
+ function seven() {
+    document.getElementById("ScreenInput").value += "7";
+ }
+ function eight() {
+    document.getElementById("ScreenInput").value += "8";
+ }
+ function nine() {
+    document.getElementById("ScreenInput").value += "9";
+ }
+ function zero() {
+    document.getElementById("ScreenInput").value += "0";
+ }
+ function add() {
+    document.getElementById("ScreenInput").value += "+";
+ }
+ function sub() {
+    document.getElementById("ScreenInput").value += "-";
+ }
+ function dot() {
+    document.getElementById("ScreenInput").value += ".";
+ }
+ function mult() {
+    document.getElementById("ScreenInput").value += "*";
+ }
+ function div() {
+    document.getElementById("ScreenInput").value += "/";
+ }
+ function calculate() {
+    document.getElementById("ScreenInput").value += "";
+ }
+
+ function AC() {
+    document.getElementById('ScreenInput').value = "";
+}
+function log() {
+ document.getElementById("ScreenInput").value += "log";
+    }
+    
+function pie() {
+ document.getElementById("ScreenInput").value += "π";
+    }
+
+// Other JavaScript functions for the calculator buttons
+function del() {
+        let input = document.getElementById("ScreenInput");
+        input.value = input.value.slice(0, -1);
+    }
+    function calculate() {
+        let input = document.getElementById("ScreenInput").value;
+
+        // Replace special characters with their JavaScript equivalents
+        input = input.replace(/×/g, '*').replace(/÷/g, '/').replace(/π/g, 'Math.PI').replace(/log/g, 'Math.log10');
+
+        try {
+            document.getElementById("ScreenInput").value = eval(input);
+        } catch (error) {
+            document.getElementById("ScreenInput").value = "Error";
+        }
+    }
+
+
+
+</script>
+</html>
