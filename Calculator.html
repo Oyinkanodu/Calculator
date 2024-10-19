@@ -5,7 +5,11 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="calcstylesheet.css">
 </head>
+
 <body>
+   <div class="Layout">
+   <button id="changelayout">Layout</button>
+</div>
     <div class="Calculator">
     <input type="text" id ="ScreenInput" placeholder="0" id="num">
     <div class="buttons">
@@ -79,30 +83,27 @@
  function div() {
     document.getElementById("ScreenInput").value += "/";
  }
- function calculate() {
-    document.getElementById("ScreenInput").value += "";
- }
 
  function AC() {
     document.getElementById('ScreenInput').value = "";
 }
 function log() {
- document.getElementById("ScreenInput").value += "log";
+ document.getElementById("ScreenInput").value += "log()";
     }
     
 function pie() {
  document.getElementById("ScreenInput").value += "π";
     }
 
-// Other JavaScript functions for the calculator buttons
+
 function del() {
         let input = document.getElementById("ScreenInput");
         input.value = input.value.slice(0, -1);
-    }
+}
+
     function calculate() {
         let input = document.getElementById("ScreenInput").value;
 
-        // Replace special characters with their JavaScript equivalents
         input = input.replace(/×/g, '*').replace(/÷/g, '/').replace(/π/g, 'Math.PI').replace(/log/g, 'Math.log10');
 
         try {
