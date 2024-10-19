@@ -1,50 +1,92 @@
 body {
-    background-color:rgb(159, 159, 255);
+    background-color:#2C3E50;
     display: flex;;
     justify-content: center; 
     align-items: center;     
     height: 100vh;          
     margin: 0;               
-
+    position: relative;
 }
+
+.Layout {
+    position: absolute; 
+    top: 15px; 
+    right: 100px; 
+}
+
+#changelayout {
+    padding: 10px 20px; 
+    font-size: 16px; /* Increase font size for better visibility */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Rounded corners */
+    background-color: #3498db;; /* Green background */
+    color: white; /* White text color */
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#changelayout:hover {
+    background-color: #a7553e; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+
 
 .Screen {
     width: 150px;
     padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #ScreenInput  {
   align-items: center;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
   width: 250px;
   height: 50px;
   display: block;
   border-radius: 20px;
   font-size: 24px;
   padding: 10px;
-  border: 2px solid black;
-  margin: 20px auto 0 auto; /* Add some top margin and center horizontally */
-
+  border: 4px solid rgb(60, 8, 8);
+  margin: 20px auto 0 auto; 
+  background-color: whitesmoke;
+  font-weight: bold;
 
 }
 
 .buttons {
     width: 250px;
     height: 300px;
+    border: none;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 10px;
     margin: 10px auto; 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     font-size: 10px;
 }
 
+.buttons button {
+    background-color: #E67E22;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+
+.buttons button:hover {
+    box-shadow: 0 8px 12px rgb(60, 8, 8)
+}
 .Calculator {
-    background-color: whitesmoke;
+    background-color: #whitesmoke;
     width: 300px;
-    height: 500px;
-    border: 10px solid hotpink;
-    border-radius: 12px ;
+    height: 450px;
+    border: 8px solid black;
+    border-radius: 15px ;
+    position: relative;
 }
