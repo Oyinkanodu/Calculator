@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+<body>
 <head>
     <meta charset="UTF-8" />
     <title>Calculator</title>
     <link rel="stylesheet" href="calcstylesheet.css">
+    <div class="theme-selector">
+        <button onclick="setTheme('burgundy')" class="theme-btn burgundy">Burgundy</button>
+<button onclick="setTheme('goth')" class="theme-btn goth">Gothic</button>
+        <button onclick="setTheme('office')" class="theme-btn office">Office</button>
+    </div>
 </head>
 
-<body>
-   <div class="Layout">
-   <button id="changelayout">Layout</button>
-</div>
     <div class="Calculator">
     <input type="text" id ="ScreenInput" placeholder="0" id="num">
     <div class="buttons">
@@ -34,11 +36,38 @@
         <button onclick="calculate()">=</button>
         <button onclick="add()">+</button>
 </div>
-</div>
-    
+</div>  
 </body>
 <script>
- function one() {
+function setTheme(theme) {
+    const calculator = document.querySelector('.Calculator');
+    const buttons = document.querySelectorAll('.buttons button');
+    const screen = document.getElementById('ScreenInput');
+    
+// Remove all existing theme classes
+calculator.classList.remove('theme-burgundy', 'theme-goth', 'theme-office', 'theme-cottage');
+    
+    // Add the new theme class
+    calculator.classList.add('theme-' + theme);
+    
+    // Update body background based on theme
+    switch(theme) {
+        case 'burgundy':
+            document.body.style.backgroundColor = '#F5E6E8';
+            break;
+        case 'goth':
+            document.body.style.backgroundColor = '#1A1A1A';
+            break;
+        case 'office':
+            document.body.style.backgroundColor = '#F5F5F5';
+            break;
+        case 'Y2K':
+            document.body.style.backgroundColor = '#FFF8E7';
+            break;
+    }
+}
+
+function one() {
     document.getElementById("ScreenInput").value += "1";
  }
  function two() {
@@ -84,22 +113,23 @@
     document.getElementById("ScreenInput").value += "/";
  }
 
- function AC() {
-    document.getElementById('ScreenInput').value = "";
-}
-function log() {
- document.getElementById("ScreenInput").value += "log()";
+   function AC() {
+      document.getElementById('ScreenInput').value = "";
+   }
+   
+   function log() {
+      document.getElementById("ScreenInput").value += "log()";
     }
     
-function pie() {
- document.getElementById("ScreenInput").value += "π";
+   function pie() {
+      document.getElementById("ScreenInput").value += "π";
     }
 
 
-function del() {
+   function del() {
         let input = document.getElementById("ScreenInput");
         input.value = input.value.slice(0, -1);
-}
+   }
 
     function calculate() {
         let input = document.getElementById("ScreenInput").value;
@@ -112,8 +142,6 @@ function del() {
             document.getElementById("ScreenInput").value = "Error";
         }
     }
-
-
 
 </script>
 </html>
